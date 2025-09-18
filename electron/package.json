@@ -1,0 +1,28 @@
+{
+  "name": "remove-watermark-app",
+  "version": "1.0.0",
+  "description": "Remove watermark video app - ready to build for Windows (64-bit)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.removewatermark",
+    "productName": "RemoveWatermarkPro",
+    "win": {
+      "target": [ "nsis" ],
+      "artifactName": "${productName}-setup-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
